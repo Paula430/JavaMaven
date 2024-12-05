@@ -1,0 +1,4 @@
+2024-12-05 03:48:05,657 ERROR c.s.LoggersClass [main] Invalid file format. Only .txt format is available.
+2024-12-05 03:48:05,659 ERROR c.s.LoggersClass [main] Password is too short. Password should have more than 8 letters.
+2024-12-05 03:48:05,660 ERROR c.s.LoggersClass [main] src\main\resources\txt.txt (The system cannot find the file specified)
+2024-12-05 03:48:05,660 ERROR c.s.LoggersClass [main] Age should be positive.
