@@ -1,23 +1,25 @@
 package com.solvd;
 
 import com.solvd.entities.*;
+
+import com.solvd.enums.CatBreedEnum;
+import com.solvd.enums.DogBreedEnum;
+import com.solvd.enums.HorseBreedEnum;
 import com.solvd.exceptions.*;
-import com.solvd.interfaces.*;
 import com.solvd.generics.*;
+import com.solvd.lambda.ICompare;
 
 
 import java.util.*;
 
 public class App {
     public static void main(String[] args) throws AgeLessThanZeroException {
-        CatBreed breedBritish = new CatBreed("British", "lazy");
-        Cat cat1 = new Cat("Sabrina", 5, breedBritish, "grey", 3, 15);
+        Cat cat1 = new Cat("Sabrina", 5, CatBreedEnum.BENGAL, "grey", 3, 15);
         DogBreed breedBulldog = new DogBreed("Bulldog", "medium");
-        Dog dog1 = new Dog("Charlie", 10.3, breedBulldog, "brown", true, 1, 20);
-        HorseBreed breedMustang=new HorseBreed("Mustang",65);
-        HorseBreed breedArabic=new HorseBreed("Arabic",48);
-        Horse horse1=new Horse("Willow", 280,breedMustang,"black", true, 5, 60);
-        Horse horse2=new Horse("Willow", 280,breedMustang,"black", true, 5, 65);
+        Dog dog1 = new Dog("Charlie", 10.3, DogBreedEnum.CHIHUAHUA, "brown", true, 1, 20);
+
+        Horse horse1=new Horse("Willow", 280, HorseBreedEnum.ARABIAN,"black", true, 5, 60);
+        Horse horse2=new Horse("Willow", 280,HorseBreedEnum.APPALOOSA,"black", true, 5, 65);
 
         /* 1. HashMap*/
         System.out.println("Hashmap: ");
@@ -49,12 +51,12 @@ public class App {
 
         /* 3. PriorityQueue for priority order */
         System.out.println("PriorityQueue: ");
-        Queue<Horse> horseQueue =new PriorityQueue<>((a1,a2)->a1.speed - a2.speed);
+        Queue<Horse> horseQueue =new PriorityQueue<>((a1,a2)->a1.getBreed().getSpeed() - a2.getBreed().getSpeed());
         horseQueue.add(horse1);
         horseQueue.add(horse2);
         while(!horseQueue.isEmpty()){
             Horse horse= horseQueue.poll(); // returns and removes the element at the front end
-            System.out.println(horse.speed);
+            System.out.println(horse.getBreed().getSpeed());
         }
 
         /* 4. ArrayList */
@@ -84,8 +86,8 @@ public class App {
         horseShelter.addAnimal(horse1);
         horseShelter.addAnimal(horse2);
         horseShelter.makeAllAnimalsEat();
-    }
 
+    }
 
 }
 

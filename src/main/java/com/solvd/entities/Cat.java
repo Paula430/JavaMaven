@@ -1,16 +1,22 @@
 package com.solvd.entities;
 
+import com.solvd.enums.CatBreedEnum;
 import com.solvd.interfaces.IMakeSound;
 import com.solvd.interfaces.IRun;
 import com.solvd.interfaces.ISleep;
+import lombok.*;
 
 import java.util.Objects;
 
+@Getter
+@Setter
+@EqualsAndHashCode
 public final class Cat extends Animal implements IRun, ISleep, IMakeSound {
-    private final CatBreed breed;
+    private final CatBreedEnum breed;
     public int speed;
 
-    public Cat(String name,double weight, CatBreed breed, String color, int age, int speed) {
+
+    public Cat(String name, double weight, CatBreedEnum breed, String color, int age, int speed) {
         this.name=name;
         this.breed=breed;
         this.color=color;
@@ -38,10 +44,6 @@ public final class Cat extends Animal implements IRun, ISleep, IMakeSound {
         }
     }
 
-    public Cat(CatBreed breed) {
-        this.breed = breed;
-    }
-
     @Override
     public void runningSpeed() {
         System.out.println("Cat " + this.name + " is running with speed " + this.speed);
@@ -62,67 +64,20 @@ public final class Cat extends Animal implements IRun, ISleep, IMakeSound {
         System.out.println("Dog " + this.name + " is sleeping " + SLEEP_DURATION + "hours");
 
     }
-
-    @Override
-    public String toString() {
-        return "entities.Cat [breed=" + breed + ", name=" + name + ", weight=" + weight + ", color=" + color + ", age=" + age
-                + ", speed=" + speed + "]";
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = prime * result + Objects.hash(breed);
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (!super.equals(obj))
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Cat other = (Cat) obj;
-        return Objects.equals(breed, other.breed);
-    }
-
     @Override
     public void eat() {
         System.out.println("Cat " + this.name + " is eating");
     }
 
-    public Breed getBreed() {
-        return breed;
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "breed=" + breed +
+                ", speed=" + speed +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                ", color='" + color + '\'' +
+                ", age=" + age +
+                '}';
     }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getWeight() {
-        return this.weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight=weight;
-    }
-
-
-
 }

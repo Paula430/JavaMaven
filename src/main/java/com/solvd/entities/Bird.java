@@ -3,9 +3,15 @@ package com.solvd.entities;
 import com.solvd.interfaces.IFly;
 import com.solvd.interfaces.IMakeSound;
 import com.solvd.interfaces.ISleep;
+import lombok.*;
 
 import java.util.Objects;
 
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@NoArgsConstructor
 public final class Bird extends Animal implements IFly, ISleep, IMakeSound {
     public boolean migration;
 
@@ -15,9 +21,6 @@ public final class Bird extends Animal implements IFly, ISleep, IMakeSound {
         this.age=age;
         this.color=color;
         this.migration=migration;
-    }
-
-    public Bird() {
     }
 
     @Override
@@ -44,16 +47,6 @@ public final class Bird extends Animal implements IFly, ISleep, IMakeSound {
     @Override
     public void sleep() {
         System.out.println("Bird " + this.name + " is sleeping");
-    }
-
-    @Override
-    public String toString() {
-        return "Bird{" +
-                "name='" + name + '\'' +
-                ", weight=" + weight +
-                ", color='" + color + '\'' +
-                ", age=" + age +
-                '}';
     }
 
     @Override

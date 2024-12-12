@@ -1,46 +1,20 @@
 package com.solvd.entities;
 
+import lombok.*;
+
 import java.util.Objects;
 
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@NoArgsConstructor
 public class DogBreed extends Breed {
     private String size;
 
     public DogBreed(String name, String size) {
         this.name=name;
         this.size=size;
-    }
-
-    public DogBreed() {
-
-    }
-
-    @Override
-    public String toString() {
-        return "entities.DogBreed [size=" + size + ", name=" + name + "]";
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = prime * result + Objects.hash(size);
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (!super.equals(obj))
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        DogBreed other = (DogBreed) obj;
-        return Objects.equals(size, other.size);
-    }
-
-    public String getSize() {
-        return size;
     }
 
     public void setSize(String size) {
@@ -54,7 +28,6 @@ public class DogBreed extends Breed {
             }
 
         }
-
         if(isValidSize) {
             this.size=size;
         }else {
@@ -62,16 +35,6 @@ public class DogBreed extends Breed {
         }
 
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-
 
 }
 
