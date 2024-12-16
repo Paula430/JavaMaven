@@ -18,26 +18,26 @@ public class App {
         DogBreed breedBulldog = new DogBreed("Bulldog", "medium");
         Dog dog1 = new Dog("Charlie", 10.3, DogBreedEnum.CHIHUAHUA, "brown", true, 1, 20);
 
-        Horse horse1=new Horse("Willow", 280, HorseBreedEnum.ARABIAN,"black", true, 5);
-        Horse horse2=new Horse("Willow", 280,HorseBreedEnum.APPALOOSA,"black", true, 5);
+        Horse horse1 = new Horse("Willow", 280, HorseBreedEnum.ARABIAN, "black", true, 5);
+        Horse horse2 = new Horse("Willow", 280, HorseBreedEnum.APPALOOSA, "black", true, 5);
 
         /* 1. HashMap*/
         System.out.println("Hashmap: ");
-        Map <String,Animal> animalsHashMap=new HashMap<>();
-        animalsHashMap.putIfAbsent("cat",cat1);
-        animalsHashMap.putIfAbsent("dog",dog1);
-        animalsHashMap.putIfAbsent("horse",horse1);
-        animalsHashMap.putIfAbsent("horse2",horse2);
+        Map<String, Animal> animalsHashMap = new HashMap<>();
+        animalsHashMap.putIfAbsent("cat", cat1);
+        animalsHashMap.putIfAbsent("dog", dog1);
+        animalsHashMap.putIfAbsent("horse", horse1);
+        animalsHashMap.putIfAbsent("horse2", horse2);
 
-        for(Map.Entry<String,Animal> entry : animalsHashMap.entrySet()){
-            System.out.println("Key: "+ entry.getKey() + "Value: "+ entry.getValue());
+        for (Map.Entry<String, Animal> entry : animalsHashMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + "Value: " + entry.getValue());
         }
         System.out.println(animalsHashMap.containsKey("parrot"));
         System.out.println(animalsHashMap.get("horse"));
 
         /* 2. HashSet */
         System.out.println("HashSet: ");
-        Set<String> stringSet= new HashSet<>();
+        Set<String> stringSet = new HashSet<>();
         stringSet.add("Volvo");
         stringSet.add("BMW");
         stringSet.add("Ford");
@@ -51,11 +51,11 @@ public class App {
 
         /* 3. PriorityQueue for priority order */
         System.out.println("PriorityQueue: ");
-        Queue<Horse> horseQueue =new PriorityQueue<>((a1,a2)->a1.getBreed().getSpeed() - a2.getBreed().getSpeed());
+        Queue<Horse> horseQueue = new PriorityQueue<>((a1, a2) -> a1.getBreed().getSpeed() - a2.getBreed().getSpeed());
         horseQueue.add(horse1);
         horseQueue.add(horse2);
-        while(!horseQueue.isEmpty()){
-            Horse horse= horseQueue.poll(); // returns and removes the element at the front end
+        while (!horseQueue.isEmpty()) {
+            Horse horse = horseQueue.poll(); // returns and removes the element at the front end
             System.out.println(horse.getBreed().getSpeed());
         }
 
@@ -82,11 +82,10 @@ public class App {
 
         /* 6. generic class with linked list*/
         System.out.println("Generic LinkedList: ");
-        AnimalShelter<Horse> horseShelter=new AnimalShelter<>();
+        AnimalShelter<Horse> horseShelter = new AnimalShelter<>();
         horseShelter.addAnimal(horse1);
         horseShelter.addAnimal(horse2);
         horseShelter.makeAllAnimalsEat();
-
     }
 
 }
