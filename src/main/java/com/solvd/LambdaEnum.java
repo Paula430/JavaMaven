@@ -17,10 +17,9 @@ import java.util.*;
 public class LambdaEnum {
     public static void main(String[] args) {
 
-
-        Horse horse1=new Horse("Willow", 280, HorseBreedEnum.MUSTANG,"black", true, 5, 60);
-        Horse horse2=new Horse("Willow", 280,HorseBreedEnum.SHIRE,"black", true, 5, 65);
-        Horse horse3=new Horse("Luke", 300, HorseBreedEnum.ARABIAN,"white", true, 2, 50);
+        Horse horse1=new Horse("Willow", 280, HorseBreedEnum.MUSTANG,"black", true, 5);
+        Horse horse2=new Horse("Willow", 280,HorseBreedEnum.SHIRE,"black", true, 5);
+        Horse horse3=new Horse("Luke", 300, HorseBreedEnum.ARABIAN,"white", true, 2);
 
         Dog dog1 = new Dog("Charlie", 10.3, DogBreedEnum.CHIHUAHUA, "brown", true, 3, 21);
         Dog dog2 = new Dog("Abby", 9, DogBreedEnum.BEAGLE, "black", true, 1, 18);

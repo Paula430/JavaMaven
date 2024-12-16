@@ -18,8 +18,8 @@ public class App {
         DogBreed breedBulldog = new DogBreed("Bulldog", "medium");
         Dog dog1 = new Dog("Charlie", 10.3, DogBreedEnum.CHIHUAHUA, "brown", true, 1, 20);
 
-        Horse horse1=new Horse("Willow", 280, HorseBreedEnum.ARABIAN,"black", true, 5, 60);
-        Horse horse2=new Horse("Willow", 280,HorseBreedEnum.APPALOOSA,"black", true, 5, 65);
+        Horse horse1=new Horse("Willow", 280, HorseBreedEnum.ARABIAN,"black", true, 5);
+        Horse horse2=new Horse("Willow", 280,HorseBreedEnum.APPALOOSA,"black", true, 5);
 
         /* 1. HashMap*/
         System.out.println("Hashmap: ");

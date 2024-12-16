@@ -13,8 +13,8 @@ public final class Fish extends Animal implements ISwim {
     private double length;
     public final String species;
 
-    public Fish(String name, double weight, double length, int age, String species, String species1) {
-        this.species = species1;
+    public Fish(String name, double weight, double length, int age, String species) {
+        this.species = species;
         this.name=name;
 
         if(weight>0 && weight<450) {

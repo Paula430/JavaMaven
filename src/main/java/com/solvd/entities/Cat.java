@@ -10,11 +10,11 @@ import java.util.Objects;
 
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor(force = true)
 public final class Cat extends Animal implements IRun, ISleep, IMakeSound {
     private final CatBreedEnum breed;
     public int speed;
-
 
     public Cat(String name, double weight, CatBreedEnum breed, String color, int age, int speed) {
         this.name=name;
@@ -43,6 +43,7 @@ public final class Cat extends Animal implements IRun, ISleep, IMakeSound {
             this.speed=speed;
         }
     }
+
 
     @Override
     public void runningSpeed() {

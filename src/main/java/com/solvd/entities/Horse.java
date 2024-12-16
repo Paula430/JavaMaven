@@ -16,7 +16,7 @@ public final class Horse extends Animal implements ISleep, IRun, IMakeSound {
     public boolean isRaceHorse;
 
 
-    public Horse(String name, double weight, HorseBreedEnum breed, String color, boolean isRaceHorse, int age, int speed) {
+    public Horse(String name, double weight, HorseBreedEnum breed, String color, boolean isRaceHorse, int age) {
         this.name=name;
         this.breed=breed;
         this.color=color;
@@ -58,10 +58,9 @@ public final class Horse extends Animal implements ISleep, IRun, IMakeSound {
 
     @Override
     public String toString() {
-        return String.format("Horse{breed=%s, speed=%d, isRaceHorse=%b}",
-                breed.name(), breed.getSpeed(), isRaceHorse);
+        return String.format("Horse{name= %s, breed=%s, speed=%d, isRaceHorse=%b, age=%d}",
+                name, breed.name(), breed.getSpeed(), isRaceHorse, age);
     }
-
 
 
 }
